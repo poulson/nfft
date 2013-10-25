@@ -1,0 +1,10 @@
+# $Id: Makefile.am 3452 2010-03-15 22:43:05Z keiner $
+
+AM_CPPFLAGS = -I$(top_srcdir)/include
+
+noinst_PROGRAMS = fastgauss
+
+fastgauss_SOURCES = fastgauss.c
+fastgauss_LDADD = $(top_builddir)/libnfft3.la @fftw3_LDFLAGS@ @fftw3_LIBS@
+
+EXTRA_DIST = levelplots.m  show_results.m README
